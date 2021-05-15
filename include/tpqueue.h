@@ -13,7 +13,7 @@ class TPQueue {
   TPQueue() : head(nullptr), tail(nullptr) {}
   ~TPQueue();
   void push(const T&);
-  T pop;
+  T pop();
  private:
   TPQueue:: ITEM * create(const T&);
   ITEM *head;
@@ -38,16 +38,13 @@ void TPQueue <T>::push(const T& data);
 {
   if (head && tail) {
     ITEM *temp = head;
-    if (temp->data.prior < data.prior)
-    {
+    if (temp->data.prior < data.prior) {
       temp = create(data);
       temp->next = head;
       head = temp;
     } else {
-      while (temp->next)
-      {
-        if (temp->next->data.prior < data.prior)
-        {
+      while (temp->next) {
+        if (temp->next->data.prior < data.prior) {
           ITEM *t = create(data);
           t->next = temp->next;
           temp->next = t;
