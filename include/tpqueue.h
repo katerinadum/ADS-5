@@ -14,22 +14,19 @@ class TPQueue {
   ~TPQueue();
   void push(const T&);
   T pop;
-//void print() const; //idk if should i do this??
  private:
   TPQueue:: ITEM * create(const T&);
   ITEM *head;
   ITEM *tail;
 
 template <typename T>
-TPQueue<T>::~TPQueue()
-{
+TPQueue<T>::~TPQueue() {
   while (head)
   pop();
 }
 
 template <typename T>
-typename TPQueue <T>::ITEM *TPQueue <T>::create(const T&)data
-{
+typename TPQueue <T>::ITEM *TPQueue <T>::create(const T&)data {
   ITEM *item = new ITEM;
   item->data = data;
   item->next = nullptr;
@@ -55,36 +52,34 @@ void TPQueue <T>::push(const T& data);
           t->next = temp->next;
           temp->next = t;
           break;
-        } else
+        } else {
           temp = temp->next;
+        }
       }
     }
-    if (!temp->next)
-    {
+    if (!temp->next) {
       tail->next = create(data);
       tail = tail->next;
-    } else
-  {
+    } else {
     head = create(data);
     tail = head;
   }
 }
 
 template <typename T>
-T TPQueue<T>::pop()
-{
+T TPQueue<T>::pop() {
   if (head) {
     ITEM* temp = head->next;
     T data = head->data;
     delete head;
     head = temp;
     return data;
-  } else
+  } else {
     return (T)0;
+  }
 }
 
-struct SYM
-{
+struct SYM {
   char ch;
   int  prior;
 };
