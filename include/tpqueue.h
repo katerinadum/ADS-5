@@ -18,6 +18,7 @@ class TPQueue {
   TPQueue:: ITEM * create(const T&);
   ITEM *head;
   ITEM *tail;
+}
 
 template <typename T>
 TPQueue<T>::~TPQueue() {
