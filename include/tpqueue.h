@@ -3,17 +3,19 @@
 #define INCLUDE_TPQUEUE_H_
 #include <cassert>
 
-template<typename T>
+template <typename T>
 class TPQueue {
   struct ITEM {
     T data;
     ITEM * next;
   };
+
  public:
   TPQueue() : head(nullptr), tail(nullptr) {}
   ~TPQueue();
   void push(const T&);
   T pop();
+
  private:
   TPQueue:: ITEM * create(const T&);
   ITEM *head;
@@ -64,7 +66,7 @@ void TPQueue <T>::push(const T& data) {
 }
 
 template <typename T>
-T TPQueue<T>::pop() {
+T TPQueue <T>::pop() {
   if (head) {
     ITEM* temp = head->next;
     T data = head->data;
