@@ -38,7 +38,8 @@ class TPQueue {
       if (!temp->next) {
         tail->next = create(data);
         tail = tail->next;
-      } else {
+      }
+    } else {
       head = create(data);
       tail = head;
     }
@@ -61,7 +62,7 @@ class TPQueue {
     item->data = data;
     item->next = nullptr;
     return item;
-  };
+  }
   ITEM *head;
   ITEM *tail;
 };
