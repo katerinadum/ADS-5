@@ -16,7 +16,7 @@ class TPQueue {
     while (head)
     pop();
   }
-  void push(const T&) {
+  void push(const T& data) {
     if (head && tail) {
       ITEM *temp = head;
       if (temp->data.prior < data.prior) {
@@ -57,7 +57,7 @@ class TPQueue {
   }
 
  private:
-  TPQueue:: ITEM * create(const T&) {
+  TPQueue:: ITEM * create(const T& data) {
     ITEM *item = new ITEM;
     item->data = data;
     item->next = nullptr;
