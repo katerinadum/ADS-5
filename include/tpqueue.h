@@ -53,7 +53,6 @@ class TPQueue {
       return data;
     }
     }
-  }
 
  private:
   TPQueue:: ITEM * create(const T& data) {
