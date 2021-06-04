@@ -51,8 +51,7 @@ class TPQueue {
       delete head;
       head = temp;
       return data;
-    } else {
-      return 0;
+    }
     }
   }
 
