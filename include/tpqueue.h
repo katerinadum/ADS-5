@@ -52,7 +52,7 @@ class TPQueue {
       head = temp;
       return data;
     } else {
-      return (T)0;
+      return 0;
     }
   }
 
